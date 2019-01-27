@@ -30,10 +30,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 # backend
-## windows
+## windows cmd
+```
 SET FLASK_APP=run.py
 SET FLASK_DEBUG=1
 flask run
+```
 
 
 
