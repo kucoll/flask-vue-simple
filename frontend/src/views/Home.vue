@@ -9,7 +9,6 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-import axios from 'axios'
 
 export default {
   name: 'home',
@@ -26,8 +25,8 @@ export default {
       this.randomNumber = this.get_random_from_back()
     },
     get_random_from_back() {
-       const path = 'http://localhost:5000/api/random'
-        axios.get(path)
+       const path = '/api/random'
+      this.$http.get(path)
         .then(response => {
           this.randomNumber = response.data.randomNumber
         })

@@ -16,7 +16,7 @@ app = Flask(__name__,
             static_folder="dist",
             template_folder="dist")
 
-cors = CORS(app, resources={"/api/*": {"origins": "*"}})
+#cors = CORS(app, resources={"/api/*": {"origins": "*"}})
 
 
 @app.route('/')
