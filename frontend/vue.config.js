@@ -1,8 +1,15 @@
+const path = require('path')
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
 module.exports = {
-  outputDir: '../dist',
+  outputDir: '../dist',// 打包项目输出目录
   devServer: {
     port: 8080, // 端口号
-    host: 'localhost',
+    host: '0.0.0.0',
+    hot: true,
     https: false, // https:{type:Boolean}
     open: true, //配置自动启动浏览器
     // proxy: 'http://localhost:4000' // 配置跨域处理,只有一个代理
