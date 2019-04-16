@@ -2,40 +2,34 @@
   <div id="app">
     <div id="nav" class="nav">
       {{btnName}}
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>|
       <router-link to="/about">About</router-link>|
       <router-link to="/login">Login</router-link>|
       <router-link to="/about">About</router-link>|
       <router-link to="/goods">goods</router-link>|
       <van-button type="default">默认按钮</van-button>
-      <van-button type="primary">主要按钮</van-button>
-      <van-button type="info">信息按钮</van-button>
-      <van-button type="warning">警告按钮</van-button>
-      <van-button type="danger">e危险按钮 </van-button>
     </div>
-	<h1>h1 title ddd asd </h1>
     <router-view/>
   </div>
 </template>
 <script>
-import { Button } from 'vant'
+import { Button } from "vant";
 export default {
-  name: 'app',
+  name: "app",
   components: {
     [Button.name]: Button
   },
   data() {
     return {
-      btnName : Button.name
-
-    }
+      btnName: Button.name
+    };
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -43,7 +37,7 @@ export default {
   margin-top: 60px;
 
   .nav {
-    background: rgb(136, 138, 105);
+    
     
   }
 }
