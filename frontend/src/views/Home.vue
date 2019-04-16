@@ -1,5 +1,6 @@
 <template>
  <div>
+	<p> change Home.vue</p>
     <hello-world></hello-world>
     <p>Random number from backend: {{ randomNumber }}</p>
     <button @click="getRandom">New random number</button>
