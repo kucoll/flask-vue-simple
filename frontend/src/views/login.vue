@@ -28,7 +28,7 @@
   </div>
 </template>
 <script>
-import { Button, Cell, Field } from "vant";
+import { Button, Field, Cell, CellGroup } from "vant";
 import NavTop from "@/views/base/nav-top";
 import NavBottom from "@/views/base/nav-bottom";
 
@@ -37,9 +37,16 @@ export default {
   components: {
     NavTop,
     NavBottom,
-    [Cell.name]: Cell,
     [Field.name]: Field,
-    [Button.name]: Button
+    [Button.name]: Button,
+    [Cell.name]: Cell,
+    [CellGroup.name]: CellGroup
+  },
+  data() {
+    return {
+      username: "",
+      password: ""
+    };
   }
 };
 </script>

@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 import NotFound from './views/NotFound.vue'
-import login from './views/login.vue'
+import Login from './views/login.vue'
 import Index from './views/index.vue'
 import goodsInfo from './views/goods/goodsInfo.vue'
 import goodsList from './views/goods/goodsList.vue'
@@ -13,21 +12,18 @@ import orderList from './views/order/orderList.vue'
 
 Vue.use(Router)
 
-const Default = { name: "Default", template: '<div class="default">default</div>' }
+
 
 const routes = [
-  {
-    path: '*',
-    name: 'notfound',
-    component: NotFound
-  },
-  {
-    path: '/devlink',
-    component: () => import('./views/devnav'),
-  },
+
   {
     path: '/',
     redirect: '/home'
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
   },
   {
     path: '/home',
@@ -38,9 +34,9 @@ const routes = [
     path: '/user',
     name: 'user',
     component: () => import('./views/user/index'),
-    children: [
-      { path: 'login', component: () => import('./views/login') }
-    ]
+    // children: [
+    //   { path: 'login', component: () => import('./views/login') }
+    // ]
   },
   , {
     path: '/index',
@@ -88,6 +84,10 @@ const routes = [
     meta: {
       title: '商品详情'
     }
+  }, {
+    path: '*',
+    name: 'notfound',
+    component: NotFound
   }
 ]
 
