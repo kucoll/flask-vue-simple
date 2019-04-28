@@ -8,7 +8,7 @@
 """
 import requests
 from flask_cors import CORS
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from random import randint
 
 app = Flask(__name__,
@@ -24,12 +24,15 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/api/random')
+@app.route('/api/random',methods=["GET", "POST"])
 def random_number():
+    number = request.values.get("number")
     response = {
-        'randomNumber': randint(1, 100)
+        'randomNumber': randint(1, 100),
+        'number': number
     }
-    return jsonify(response)
+    params = request.get_json()
+    return jsonify(params)
 
 
 @app.route('/', defaults={'path': ''})
@@ -38,3 +41,6 @@ def catch_all(path):
     if app.debug:
         return requests.get('http://localhost:8080/{}'.format(path)).text
     return render_template("index.html")
+
+if __name__ == '__main__':
+    app.run()

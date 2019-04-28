@@ -33,6 +33,6 @@
 </script>
 
 <style scoped>
-    .van-nav-bar .van-icon, .van-nav-bar__text{color: ;}
+    
 
 </style>

@@ -9,9 +9,9 @@ module.exports = {
   // 使用运行时编译器的 Vue 构建版本
   //runtimeCompiler: true,
   // 开启生产环境SourceMap，设为false打包时不生成.map文件
-  //productionSourceMap: false,
+  productionSourceMap: false,
   // 关闭ESLint，如果你需要使用ESLint，把lintOnSave设为true即可
-  //lintOnSave: false,
+  lintOnSave: true,
   devServer: {
     port: 8080, // 端口号
     host: '0.0.0.0',
@@ -33,7 +33,8 @@ module.exports = {
   chainWebpack: (config) => {
     config.resolve.alias
       .set('@', resolve('src'))
-      .set('assets', resolve('src/assets'))
-      .set('components', resolve('src/components'))
+      .set('@assets', resolve('src/assets'))
+      .set('@components', resolve('src/components'))
+      .set('@views', resolve('src/views'))
   }
 }
